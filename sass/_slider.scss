@@ -1,0 +1,139 @@
+.slider-box {
+    margin-top: 30px;
+    margin-bottom: 60px;
+}
+
+.slider {
+    background: $greybg;
+    border-radius: 12px;
+    &__pic {
+        background-image: url('../img/team-m.jpg');
+        background-repeat: no-repeat;
+        background-size: cover;
+        height: 500px;
+        width: 100%;
+        object-fit: cover;
+        border-top-left-radius: 12px;
+        border-top-right-radius: 12px;
+    }
+}
+.slider-content {
+    padding: 30px;
+    &__link {
+        font-weight: 700;
+        font-size: 14px;
+        line-height: 17px;
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        text-decoration: none;
+        color: $activeregular;
+        &::after {
+            content: '';
+            background-image: url('../img/arrow.svg');
+            background-repeat: no-repeat;
+            width: 12px;
+            height: 12px;
+            display: inline-block;
+        }
+    }
+    &__text {
+        font-weight: 700;
+        font-size: 30px;
+        line-height: 37px;
+        background: $textgradient;
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        text-fill-color: transparent;
+        padding-top: 5px;
+        padding-bottom: 30px;
+    }
+    &__name {
+        font-weight: 700;
+        font-size: 16px;
+        line-height: 20px;
+        color: $greytext;
+        max-width: 170px;
+    }
+    &__position {
+        font-weight: 400;
+        font-size: 14px;
+        line-height: 22px;
+        color: $greytext;
+        padding-top: 6x;
+    }
+}
+
+.dots {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding-left: 0;
+    padding-top: 30px;
+    & li {
+        padding: 0 7px;
+        &.active button {
+            background: $activeactive;
+        }
+    }
+    & button {
+        cursor: pointer;
+        width: 16px;
+        height: 16px;
+        border: none;
+        background: $activeregular;
+        font-size: 0;
+        border-radius: 50%;
+    }  
+}
+
+
+@media (min-width: 768px) {
+    .slider-box {
+        margin-top: 60px;
+    }
+    .slider__pic {
+        background-image: url('../img/team-t.jpg');
+    }
+    .slider-content__text {
+        font-size: 38px;
+        line-height: 46px;
+        width: 550px;
+    }
+    .slider-content__name {
+        max-width: 550px;
+    }
+}
+
+@media (min-width: 992px) {
+    .slider {
+        display: grid;
+        grid-template-columns: 400px 504px;
+        &__pic {
+            background-image: url('../img/team-tb.jpg');
+            height: 528px;
+            border-top-right-radius: 0;
+            border-bottom-left-radius: 12px;
+        }
+    }
+    .slider-content__text {
+        width: 400px;
+    }
+    .slider-content__name {
+        max-width: 400px;
+    }
+}
+
+@media (min-width: 1200px) {
+    .slider {
+        display: grid;
+        grid-template-columns: 400px 1fr;
+        &__pic {
+            background-image: url('../img/team.jpg');
+            height: 344px;
+        }
+    }
+    .slider-content__text {
+        width: 800px;
+    }
+}
